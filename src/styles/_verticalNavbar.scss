@@ -1,0 +1,10 @@
+.verticalLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .logoVerticalNavbar {
+    width: 64px;
+    height: 64px;
+  }
+}

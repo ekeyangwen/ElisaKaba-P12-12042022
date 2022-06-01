@@ -1,6 +1,6 @@
 import React from "react";
 
-const verticalNavbar = () => {
+const VerticalNavbar = () => {
   return (
     <div className="verticalLogo">
       <img
@@ -27,4 +27,4 @@ const verticalNavbar = () => {
   );
 };
 
-export default verticalNavbar;
+export default VerticalNavbar;

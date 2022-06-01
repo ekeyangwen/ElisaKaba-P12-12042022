@@ -1,10 +1,10 @@
 import React from "react";
-import VerticalNavbar from "../Components/VerticalNavbar";
 
 const Home = () => {
   return (
     <div className="home">
-      <VerticalNavbar />
+      <button className="mock">Données mockées</button>
+      <button className="api">Données de l'API</button>
     </div>
   );
 };

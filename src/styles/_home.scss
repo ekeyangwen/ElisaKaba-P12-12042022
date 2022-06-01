@@ -1,0 +1,19 @@
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 200px;
+
+  .mock,
+  .api {
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    border-width: 1px;
+    background: black;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

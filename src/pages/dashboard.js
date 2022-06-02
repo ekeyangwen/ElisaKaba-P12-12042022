@@ -1,7 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
-import { info } from "sass";
+import {
+  LineChart,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+} from "recharts";
+import Ligne from "../Components/Ligne";
 
 const Dashboard = () => {
   const { id } = useParams();
@@ -22,24 +32,20 @@ const Dashboard = () => {
           (performance) => performance.userId === id
         );
         setPerformance(performanceFind);
-        console.log(performance);
+        console.log(performanceFind);
       });
   }, []);
 
-  console.log(user);
   if (user === undefined) {
     return <Navigate to="*" />;
   }
 
-  const infoPerformance = performance.kind;
-  const infoUser = user.userInfos;
-
-  console.log(infoPerformance);
+  // return performance.data.map((data) => {
   return (
     <div>
-      Bonjour {user && infoUser} {user && infoPerformance}
+      <Ligne performance={performance.data} />
     </div>
   );
+  // });
 };
-
 export default Dashboard;

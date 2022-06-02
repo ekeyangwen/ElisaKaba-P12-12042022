@@ -4,7 +4,6 @@ import NotFound from "./pages/notFound";
 import Header from "./Components/Header";
 import Dashboard from "./pages/dashboard";
 import VerticalNavbar from "./Components/VerticalNavbar";
-// import Footer from "./components/Footer";
 
 function App() {
   return (

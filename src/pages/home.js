@@ -1,10 +1,10 @@
 import React from "react";
+import HomeBtn from "../Components/HomeBtn";
 
-const Home = () => {
+const Home = ({ id }) => {
   return (
     <div className="home">
-      <button className="mock">Données mockées</button>
-      <button className="api">Données de l'API</button>
+      <HomeBtn />
     </div>
   );
 };

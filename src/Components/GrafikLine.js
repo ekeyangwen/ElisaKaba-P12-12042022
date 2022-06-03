@@ -1,7 +1,7 @@
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
+import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
 
-const Ligne = ({ performance }) => {
+const GrafikLine = () => {
   return (
     <div>
       <LineChart width={500} height={700} data={performance}>
@@ -20,4 +20,4 @@ const Ligne = ({ performance }) => {
   );
 };
 
-export default Ligne;
+export default GrafikLine;

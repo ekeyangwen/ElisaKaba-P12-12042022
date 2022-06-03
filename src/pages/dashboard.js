@@ -1,22 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
-import {
-  LineChart,
-  ResponsiveContainer,
-  Legend,
-  Tooltip,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-} from "recharts";
-import Ligne from "../Components/Ligne";
+import GrafikRadar from "../Components/GrafikRadar";
+import HorizontalInfos from "../Components/HorizontalInfos";
 
 const Dashboard = () => {
   const { id } = useParams();
   const [user, setUser] = useState("");
   const [performance, setPerformance] = useState("");
+  const [kind, setKind] = useState("");
 
   useEffect(() => {
     fetch("../../../dataInfoUsers.json")
@@ -32,20 +24,25 @@ const Dashboard = () => {
           (performance) => performance.userId === id
         );
         setPerformance(performanceFind);
-        console.log(performanceFind);
+        // setKind(
+        //   performance.kind.find(
+        //     (kind) => `value ${kind} = ${performance.kind[kind]}`
+        //   )
+        // );
       });
   }, []);
 
   if (user === undefined) {
     return <Navigate to="*" />;
   }
+  let usersInfos = user.userInfos;
 
-  // return performance.data.map((data) => {
   return (
     <div>
-      <Ligne performance={performance.data} />
+      <h1 className="bonjour">Bonjour {user && usersInfos.firstName} </h1>
+      <GrafikRadar performance={performance} kind={kind} id={id} />
+      <HorizontalInfos user={user} />
     </div>
   );
-  // });
 };
 export default Dashboard;

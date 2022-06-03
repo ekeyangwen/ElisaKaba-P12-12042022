@@ -15,11 +15,13 @@ const HorizontalInfos = ({ user }) => {
         </h2>
         <h2 className="proteines">
           {" "}
-          <img
-            className="proteinesImg"
-            src="../../img/os.png"
-            alt="proteines"
-          />
+          <div className="imgCarre">
+            <img
+              className="proteinesImg"
+              src="../../img/background-blue.png"
+              alt="proteines"
+            />
+          </div>
           {user && keysData.proteinCount}g Proteines
         </h2>
         <h2 className="glucides">

@@ -1,7 +1,5 @@
 .header {
   display: flex;
-  max-width: 1440px;
-  margin: auto;
   background-color: #020203;
   height: 91px;
   align-items: center;
@@ -13,9 +11,6 @@
     top: 18px;
   }
 
-  .navbar {
-    width: 100%;
-  }
   .navbarTitles {
     display: flex;
     justify-content: space-around;

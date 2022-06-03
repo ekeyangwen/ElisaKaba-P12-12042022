@@ -4,14 +4,14 @@ const HorizontalInfos = ({ user }) => {
   let keysData = user.keyData;
   return (
     <div>
-      <div className="InfosCount">
+      <div className="infosCount">
         <h2 className="calories">
           <img
             className="caloriesImg"
             src="../../img/flamme.png"
             alt="calories"
           />
-          {user && keysData.calorieCount} Calories
+          {user && keysData.calorieCount}kCal Calories
         </h2>
         <h2 className="proteines">
           {" "}
@@ -20,7 +20,7 @@ const HorizontalInfos = ({ user }) => {
             src="../../img/os.png"
             alt="proteines"
           />
-          {user && keysData.proteinCount} Proteines
+          {user && keysData.proteinCount}g Proteines
         </h2>
         <h2 className="glucides">
           <img
@@ -28,7 +28,7 @@ const HorizontalInfos = ({ user }) => {
             src="../../img/pomme.png"
             alt="glucides"
           />
-          {user && keysData.lipidCount} Glucides
+          {user && keysData.carbohydrateCount}g Glucides
         </h2>
         <h2 className="lipides">
           {" "}
@@ -37,7 +37,7 @@ const HorizontalInfos = ({ user }) => {
             src="../../img/cheeseburger.png"
             alt="lipides"
           />
-          {user && keysData.carbohydrateCount} Lipides
+          {user && keysData.lipidCount}g Lipides
         </h2>
       </div>
     </div>

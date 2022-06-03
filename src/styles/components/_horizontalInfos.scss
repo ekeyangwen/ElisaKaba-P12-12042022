@@ -1,0 +1,8 @@
+.infosCount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .calories {
+    color: blue;
+  }
+}

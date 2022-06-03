@@ -1,4 +1,5 @@
-@import "./settings.scss";
-@import "./header";
-@import "./verticalNavbar";
-@import "./home";
+@import "./settings";
+@import "./components/header";
+@import "./components/verticalNavbar";
+@import "./components/home";
+@import "./components/horizontalInfos";

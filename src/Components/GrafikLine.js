@@ -3,8 +3,8 @@ import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const GrafikLine = () => {
   return (
-    <div>
-      <LineChart width={500} height={700} data={performance}>
+    <div className="line">
+      <LineChart data={performance}>
         <CartesianGrid />
         <XAxis dataKey="kind" />
         <YAxis yAxisId="left-axis" />

@@ -2,8 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import GrafikRadar from "../Components/GrafikRadar";
-import HorizontalInfos from "../Components/HorizontalInfos";
+import VerticalInfos from "../Components/VerticalInfos";
 import GrafikPie from "../Components/GrafikPie";
+import GrafikLine from "../Components/GrafikLine";
+import GrafikBar from "../Components/GrafikBar";
+import users from "../Users";
 
 const Dashboard = () => {
   const { id } = useParams();
@@ -19,6 +22,7 @@ const Dashboard = () => {
         let userFind = myJson.find((user) => user.id === id);
         setUser(userFind);
       });
+    console.log(user);
 
     fetch("../../../dataPerformanceUsers.json")
       .then((response) => response.json())
@@ -46,22 +50,41 @@ const Dashboard = () => {
   // console.log(userSession);
 
   return (
-    <div>
-      <h1 className="bonjour">
-        Bonjour {user && usersInfos.firstName}
-        {/* {userSession[0].sessionLength} */}
-        {/* {user && userSession.day} */}
-      </h1>
-      <div className="grafiksAndInfos">
-        <div className="grafiks">
-          {/* <GrafikRadar performance={performance} kind={kind} id={id} /> */}
-          <GrafikPie />
-        </div>
-        <div className="infos">
-          <HorizontalInfos user={user} />
-        </div>
-      </div>
-    </div>
+    <>
+      <section className="dashboard">
+        <section className="nameAndGrafiks">
+          <h1 className="bonjour">
+            Bonjour <span className="name">{user && usersInfos.firstName}</span>
+            {/* {userSession[0].sessionLength}
+        {user && userSession.day} */}
+          </h1>
+          {/* <div className="persoName"> </div>
+      {users.forEach((info) => {
+        let persoUser = document.getElementById("persoName");
+        let useSingle = new users(info);
+        persoUserr.innerHTML += userSingle.createWelcomeName();
+      })} */}
+          <div className="grafiksAndInfos">
+            <div className="grafiksBar">
+              <GrafikBar />
+            </div>
+            {/* <GrafikRadar performance={performance} kind={kind} id={id} /> */}
+
+            <div className="otherGrafiks">
+              <GrafikLine />
+              <GrafikRadar />
+              <GrafikPie />
+            </div>
+          </div>{" "}
+        </section>
+        <section className="verticalbar">
+          <div className="infos">
+            <VerticalInfos user={user} />
+          </div>
+        </section>
+      </section>
+    </>
   );
 };
+
 export default Dashboard;

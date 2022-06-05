@@ -1,7 +1,7 @@
 .dashboard {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+
   .bonjour {
     text-align: left;
     font-family: Roboto;
@@ -19,33 +19,60 @@
     display: flex;
     flex-direction: column;
   }
-}
 
-.otherGrafiks {
   .radar,
   .pie,
   .line {
+    display: flex;
+    margin: 15px;
     height: 263px;
     width: 258px;
     border-radius: 5px;
+    background: red;
   }
-}
 
-.grafiksAndInfos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .radar {
+    background: #282d30;
+  }
 
-.grafiksBar {
-  align-items: center;
-  justify-content: center;
-}
+  .pie {
+    background: #fbfbfb;
+    justify-content: center;
+  }
+  .score {
+    background: #ffffff;
+    align-self: center;
+    border: 10px solid;
+    border-image-source: conic-gradient(
+      from 90deg at 50% 50%,
+      #fbfbfb -55.42deg,
+      #fbfbfb 180.95deg,
+      #ff0000 180.98deg,
+      #ff0000 304.55deg,
+      #fbfbfb 304.58deg,
+      #fbfbfb 540.95deg
+    );
+  }
 
-.bar {
-  display: flex;
-  height: 320px;
-  width: 835px;
-  background: #fbfbfb;
-  border-radius: 5px;
+  .otherGrafiks {
+    display: flex;
+  }
+
+  .grafiksAndInfos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grafiksBar {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bar {
+    display: flex;
+    height: 320px;
+    width: 835px;
+    background: #fbfbfb;
+    border-radius: 5px;
+  }
 }

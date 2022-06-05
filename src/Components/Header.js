@@ -1,15 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import HorizontalNavbar from "./HorizontalNavbar";
-import VerticalNavbar from "./VerticalNavbar";
 
 const Header = () => {
   return (
     <div className="header">
-      <img
-        className="logo"
-        src="../../../img/sportsee.logo.png"
-        alt="logo sportsee"
-      ></img>
+      <NavLink to="/" className="logoNav">
+        <img
+          className="logo"
+          src="../../../img/sportsee.logo.png"
+          alt="logo sportsee"
+        ></img>
+      </NavLink>
       <HorizontalNavbar />
     </div>
   );

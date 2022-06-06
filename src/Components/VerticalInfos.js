@@ -1,7 +1,6 @@
 import React from "react";
 
 const VerticalInfos = ({ user }) => {
-  let keysData = user.keyData;
   return (
     <div>
       <div className="infosCount">
@@ -14,7 +13,7 @@ const VerticalInfos = ({ user }) => {
             />
           </div>
           <div className="calorieTitle">
-            {user && keysData.calorieCount}kCal{" "}
+            {user && user.calorieCount}kCal{" "}
             <div className="smallCalorieTitle"> Calories</div>
           </div>
         </h2>
@@ -28,7 +27,7 @@ const VerticalInfos = ({ user }) => {
             />
           </div>{" "}
           <div className="proteineTitle">
-            {user && keysData.proteinCount}g
+            {user && user.proteinCount}g
             <div className="smallProteineTitle">Proteines</div>{" "}
           </div>
         </h2>
@@ -39,7 +38,7 @@ const VerticalInfos = ({ user }) => {
             alt="glucides"
           />
           <div className="glucideTitle">
-            {user && keysData.carbohydrateCount}g{" "}
+            {user && user.carbohydrateCount}g{" "}
             <div className="smallGlucideTitle">Glucides</div>
           </div>
         </h2>
@@ -51,7 +50,7 @@ const VerticalInfos = ({ user }) => {
             alt="lipides"
           />{" "}
           <div className="lipideTitle">
-            {user && keysData.lipidCount}g
+            {user && user.lipidCount}g
             <div className="smallLipideTitle">Lipides</div>
           </div>
         </h2>

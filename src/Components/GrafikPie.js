@@ -1,12 +1,22 @@
 import React from "react";
 import { PieChart, Pie } from "recharts";
 
-const GrafikPie = () => {
+const GrafikPie = ({ score, data }) => {
   return (
     <div className="pie">
-      {/* <PieChart className="score" width={159} height={159}>
-        <Pie data={score} cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-      </PieChart> */}
+      <PieChart width={159} height={159}>
+        <Pie
+          dataKey={score}
+          startAngle={180}
+          endAngle={0}
+          data={data}
+          cx={200}
+          cy={200}
+          outerRadius={80}
+          fill="#8884d8"
+          label
+        />
+      </PieChart>
     </div>
   );
 };

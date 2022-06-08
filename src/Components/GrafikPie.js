@@ -1,21 +1,23 @@
 import React from "react";
 import { PieChart, Pie } from "recharts";
+import { Value } from "sass";
 
-const GrafikPie = ({ score, data }) => {
+const GrafikPie = ({ data }) => {
   return (
     <div className="pie">
-      <PieChart width={159} height={159}>
+      <PieChart width={730} height={250}>
         <Pie
-          dataKey={score}
-          startAngle={180}
-          endAngle={0}
           data={data}
-          cx={200}
-          cy={200}
+          dataKey={Value}
+          nameKey="todayScore"
+          cx="50%"
+          cy="50%"
+          innerRadius={60}
           outerRadius={80}
-          fill="#8884d8"
+          fill="blue"
           label
         />
+        <Pie />
       </PieChart>
     </div>
   );

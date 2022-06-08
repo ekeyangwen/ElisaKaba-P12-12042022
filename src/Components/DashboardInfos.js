@@ -26,11 +26,11 @@ const DashboardInfos = () => {
   //   console.log(user);
   // }, []);
 
-  const dataMain = useApi("../data/dataInfoUser12.json");
+  const dataMain = useApi(`../data/dataInfoUser${id}.json`);
   console.log(dataMain);
   const speedAccesData = dataMain.data;
 
-  // if ((speedAccesData.id = !speedAccesData && speedAccesData.id)) {
+  // if (({ id } = !`dataInfoUser${id}`)) {
   //   return <Navigate to="*" />;
   // }
 
@@ -54,10 +54,7 @@ const DashboardInfos = () => {
             <div className="otherGrafiks">
               <GrafikLine />
               <GrafikRadar />
-              <GrafikPie
-                data={speedAccesData}
-                score={speedAccesData && speedAccesData.todayScore}
-              />
+              <GrafikPie data={dataMain} />
             </div>
             <section className="verticalbar">
               <div className="infos">

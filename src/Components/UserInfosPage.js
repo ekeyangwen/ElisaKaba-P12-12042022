@@ -1,7 +1,7 @@
 import React from "react";
-import HomeBtn from "./HomeBtn";
 import { userList } from "../utils/const/userList";
 import { NavLink } from "react-router-dom";
+
 const UserInfosPage = () => {
   return (
     <div className="user">

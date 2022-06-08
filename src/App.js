@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <VerticalNavbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/user/:id" element={<DashboardInfos />} />

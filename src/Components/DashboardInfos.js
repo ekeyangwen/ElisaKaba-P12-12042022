@@ -7,27 +7,12 @@ import GrafikPie from "./GrafikPie";
 import GrafikRadar from "./GrafikRadar";
 import VerticalInfos from "./VerticalInfos";
 import useApi from "../utils/const/api/useApi";
+import VerticalNavbar from "./VerticalNavbar";
 
 const DashboardInfos = () => {
   const { id } = useParams();
-  const [user, setUser] = useState("");
-
-  //   const [performance, setPerformance] = useState("");
-  //   const [kind, setKind] = useState("");
-  //   const [average, setAverage] = useState();
-
-  // useEffect(() => {
-  //   fetch("../../../dataInfoUsers.json")
-  //     .then((response) => response.json())
-  //     .then((myJson) => {
-  //       let userFind = myJson.find((user) => user.id === id);
-  //       setUser(userFind);
-  //     });
-  //   console.log(user);
-  // }, []);
 
   const dataMain = useApi(`../data/dataInfoUser${id}.json`);
-  console.log(dataMain);
   const speedAccesData = dataMain.data;
 
   // if (({ id } = !`dataInfoUser${id}`)) {
@@ -37,25 +22,36 @@ const DashboardInfos = () => {
   return (
     <div>
       <section className="dashboard">
+        <section className="vertical">
+          <VerticalNavbar />
+        </section>
         <section className="nameAndGrafiks">
           <h1 className="bonjour">
             Bonjour{" "}
             <span className="name">
               {speedAccesData && speedAccesData.userInfos.firstName}
             </span>
+            <h2 className="felicitation">
+              Félicitation ! Vous avez explosé vos objectifs hier 👏
+            </h2>
             {/* {userSession[0].sessionLength}
             // // {user && userSession.day} */}
           </h1>
-          <div className="grafiksAndInfos">
-            <div className="grafiksBar">
-              <GrafikBar />
-            </div>
 
-            <div className="otherGrafiks">
-              <GrafikLine />
-              <GrafikRadar />
-              <GrafikPie data={dataMain} />
-            </div>
+          <section className="grafiksAndInfos">
+            <section className="grafiks">
+              <div className="grafiksBar">
+                <GrafikBar />
+              </div>
+              <div className="otherGrafiks">
+                <GrafikLine />
+                <GrafikRadar />
+                <GrafikPie
+                  data={dataMain}
+                  score={speedAccesData && speedAccesData.todayScore.score}
+                />
+              </div>{" "}
+            </section>
             <section className="verticalbar">
               <div className="infos">
                 <VerticalInfos
@@ -63,7 +59,7 @@ const DashboardInfos = () => {
                 />
               </div>
             </section>
-          </div>
+          </section>
         </section>
       </section>
     </div>

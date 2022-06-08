@@ -1,9 +1,9 @@
 .infosCount {
   width: 250px;
+  height: 622px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  margin-top: 100px;
+  justify-content: space-between;
 
   .calories,
   .proteines,
@@ -13,10 +13,11 @@
     height: 124px;
     width: 258px;
     border-radius: 5px;
+    margin: 0px;
   }
-  h2 {
-    padding: 30px;
-  }
+  // h2 {
+  //   padding: 15px;
+  // }
   .blueImg,
   .redImg,
   .yellowImg,

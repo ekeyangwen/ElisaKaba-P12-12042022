@@ -1,12 +1,30 @@
+.verticalbar {
+  margin-left: 25px;
+}
+.vertical {
+  background: #020203;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+
+  width: 117px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+}
+
 .verticalLogo {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   color: black;
-  margin-top: 300px;
   width: 64px;
+
   .logoVerticalNavbar {
     width: 64px;
     height: 64px;
+    margin-top: 25px;
   }
 }

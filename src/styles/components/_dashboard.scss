@@ -1,6 +1,5 @@
 .dashboard {
   display: flex;
-  justify-content: space-around;
 
   .bonjour {
     text-align: left;
@@ -15,9 +14,20 @@
   .name {
     color: red;
   }
+
+  .felicitation {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
   .nameAndGrafiks {
     display: flex;
     flex-direction: column;
+    margin-left: 60px;
   }
 
   .radar,
@@ -29,10 +39,6 @@
     width: 258px;
     border-radius: 5px;
     background: red;
-  }
-
-  .radar {
-    background: #282d30;
   }
 
   .pie {
@@ -55,16 +61,24 @@
 
   .otherGrafiks {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
   }
 
   .grafiksAndInfos {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
   }
 
   .grafiksBar {
     align-items: center;
     justify-content: center;
+  }
+  .grafiks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .bar {

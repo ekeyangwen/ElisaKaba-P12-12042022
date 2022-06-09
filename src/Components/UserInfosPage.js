@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 const UserInfosPage = () => {
   return (
-    <div className="user">
+    <div className="homeBtn">
       {userList.map((user) => (
-        <div className="homeBtn">
-          <NavLink to={`user/${user.id}`} className="getUser">
-            <button className="mock">user {user.id}</button>
-          </NavLink>
-        </div>
+        <NavLink to={`user/${user.id}`} key={user.id} className="getUser">
+          <button className="mock" key={user.id}>
+            user {user.id}
+          </button>
+        </NavLink>
       ))}
     </div>
   );

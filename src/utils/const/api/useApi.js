@@ -10,7 +10,7 @@ const useApi = (url) => {
       })
       .then(function (myJson) {
         setData(myJson);
-        console.log(data);
+        console.log("JSON:", myJson);
       });
   }, [url]);
 

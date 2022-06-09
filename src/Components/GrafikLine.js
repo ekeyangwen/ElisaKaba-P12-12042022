@@ -1,21 +1,14 @@
 import React from "react";
-import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
+import { Line, LineChart, ResponsiveContainer } from "recharts";
 
 const GrafikLine = () => {
   return (
     <div className="line">
-      <LineChart data={performance}>
-        <CartesianGrid />
-        <XAxis dataKey="kind" />
-        <YAxis yAxisId="left-axis" />
-        <YAxis yAxisId="right-axis" orientation="right" />
-        <Line
-          yAxisId="left-axis"
-          type="monotone"
-          dataKey="value"
-          stroke="green"
-        />
-      </LineChart>
+      {/* <ResponsiveContainer width="100%" height="100%">
+        <LineChart width={300} height={100} data={data}>
+          <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+        </LineChart>
+      </ResponsiveContainer> */}
     </div>
   );
 };

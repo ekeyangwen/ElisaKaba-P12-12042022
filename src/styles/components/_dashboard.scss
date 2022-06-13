@@ -32,41 +32,40 @@
     margin-left: 60px;
   }
 
-  .radar,
-  .pie,
-  .line {
-    display: flex;
-    margin: 15px;
-    height: 263px;
-    width: 258px;
-    border-radius: 5px;
-    background: red;
-  }
+  // .radar,
+  // .pie,
+  // .line {
+  //   display: flex;
+  //   margin: 15px;
+  //   height: 263px;
+  //   width: 258px;
+  //   border-radius: 5px;
+  // }
 
-  .pie {
-    justify-content: center;
-  }
-  .score {
-    background: #ffffff;
-    align-self: center;
-    border: 10px solid;
-    border-image-source: conic-gradient(
-      from 90deg at 50% 50%,
-      #fbfbfb -55.42deg,
-      #fbfbfb 180.95deg,
-      #ff0000 180.98deg,
-      #ff0000 304.55deg,
-      #fbfbfb 304.58deg,
-      #fbfbfb 540.95deg
-    );
-  }
+  // .pie {
+  //   justify-content: center;
+  // }
+  // .score {
+  //   background: #ffffff;
+  //   align-self: center;
+  //   border: 10px solid;
+  //   border-image-source: conic-gradient(
+  //     from 90deg at 50% 50%,
+  //     #fbfbfb -55.42deg,
+  //     #fbfbfb 180.95deg,
+  //     #ff0000 180.98deg,
+  //     #ff0000 304.55deg,
+  //     #fbfbfb 304.58deg,
+  //     #fbfbfb 540.95deg
+  //   );
+  // }
 
-  .otherGrafiks {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 25px;
-  }
+  // .otherGrafiks {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   margin-top: 25px;
+  // }
 
   .grafiksAndInfos {
     display: flex;

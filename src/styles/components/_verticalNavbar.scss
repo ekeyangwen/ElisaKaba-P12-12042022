@@ -7,19 +7,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0px;
-
   width: 117px;
-  left: 0px;
-  top: 0px;
-  border-radius: 0px;
 }
 
 .verticalLogo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: black;
+  background-color: black;
   width: 64px;
 
   .logoVerticalNavbar {

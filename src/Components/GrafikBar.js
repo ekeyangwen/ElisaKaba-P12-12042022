@@ -9,15 +9,15 @@ import {
   Bar,
 } from "recharts";
 
-const GrafikBar = (dataActivity) => {
-  console.log(dataActivity.data);
+const GrafikBar = ({ activity }) => {
+  console.log("Activity", activity.sessions);
   return (
     <div className="bar">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
           height={300}
-          data={dataActivity.data.sessions}
+          data={activity.sessions}
           margin={{
             top: 5,
             right: 30,
@@ -26,7 +26,7 @@ const GrafikBar = (dataActivity) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="sessions" />
+          <XAxis dataKey="day" />
           <YAxis />
           <Legend />
           <Bar dataKey="kilogram" fill="#8884d8" />

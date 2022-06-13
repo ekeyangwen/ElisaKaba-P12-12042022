@@ -4,10 +4,10 @@ import VerticalNavbar from "../Components/VerticalNavbar";
 
 const Home = () => {
   return (
-    <div className="home">
+    <section className="home">
       <VerticalNavbar />
       <UserInfosPage />
-    </div>
+    </section>
   );
 };
 

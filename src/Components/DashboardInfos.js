@@ -10,50 +10,34 @@ import VerticalNavbar from "./VerticalNavbar";
 
 const DashboardInfos = () => {
   const { id } = useParams();
-  console.log("DasboardInfos");
+
   const dataMain = useApi(`../data/dataInfoUser${id}.json`);
   console.log(dataMain);
-  const speedAccesDataMain = dataMain.data;
-  const dataActivity = useApi(`http://localhost:3000/user/12/activity`);
-  console.log(dataActivity);
-  console.log(dataActivity.userId);
-  console.log(dataActivity.sessions);
+  const dataAverage = useApi(`../data/${id}/dataAverageSessionsUser.json`);
+  const dataActivity = useApi(`../data/${id}/dataActivityUser.json`);
+  const dataPerformance = useApi(`../data/${id}/dataPerformanceUser.json`);
 
-  const dataAverage = useApi(`../data/18/dataAverageSessionsUser.json`);
-  const speedAccesDataActivity = dataActivity.data;
-  const speedAccesDataAverage = dataAverage.sessions;
-  // const dataActivityMap = speedAccesDataActivity.forEach((session) => {
-  // console.log(dataActivity);
-  // console.log(dataActivity.data);
-  // });
+  let loadingComplete = true;
 
-  // console.log(dataActivityMap);
-  // console.log(speedAccesDataActivity);
-  // console.log(speedAccesDataActivity.sessions);
-  // console.log(
-  //   dataActivity.data.sessions[0]
-  // .map((session) => {
-  //   return console.log(session[0]);
-  // })
-  // dataActivity.data.sessions.map((session) => {
-  //   console.log("Hello");
-  // });
+  if (dataMain === null || dataAverage === null || dataActivity === null) {
+    console.log(dataMain);
 
-  // if (({ id } = !`dataInfoUser${id}`)) {
-  //   return <Navigate to="*" />;
-  // }
+    return (loadingComplete = false);
+  }
+  console.log(loadingComplete);
+  console.log("Hello");
 
-  return (
+  return loadingComplete === false ? (
+    console.log("Chargement...")
+  ) : (
     <div>
       <section className="dashboard">
-        <section className="vertical">
-          <VerticalNavbar />
-        </section>
+        <VerticalNavbar />
         <section className="nameAndGrafiks">
           <h1 className="bonjour">
             Bonjour{" "}
             <span className="name">
-              {speedAccesDataMain && speedAccesDataMain.userInfos.firstName}
+              {dataMain.data && dataMain.data.userInfos.firstName}
             </span>
           </h1>
           <h2 className="felicitation">
@@ -61,25 +45,20 @@ const DashboardInfos = () => {
           </h2>
           <section className="grafiksAndInfos">
             <section className="grafiks">
-              <div className="grafiksBar">
-                <GrafikBar data={dataActivity} />
+              <div className="grafikBar">
+                <GrafikBar activity={dataActivity.data && dataActivity.data} />
               </div>
               <div className="otherGrafiks">
-                <GrafikLine />
-                <GrafikRadar />
-                <GrafikPie
-                  data={dataMain}
-                  score={
-                    speedAccesDataMain && speedAccesDataMain.todayScore.score
-                  }
+                <GrafikLine average={dataAverage.data && dataAverage.data} />
+                <GrafikRadar
+                  performance={dataPerformance.data && dataPerformance.data}
                 />
+                <GrafikPie score={dataMain && dataMain.data} />
               </div>{" "}
             </section>
             <section className="verticalbar">
               <div className="infos">
-                <VerticalInfos
-                  user={speedAccesDataMain && speedAccesDataMain.keyData}
-                />
+                <VerticalInfos user={dataMain && dataMain.data} />
               </div>
             </section>
           </section>

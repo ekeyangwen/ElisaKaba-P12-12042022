@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/notFound";
 import Header from "./Components/Header";
 import DashboardInfos from "./Components/DashboardInfos";
-import VerticalNavbar from "./Components/VerticalNavbar";
 
 function App() {
   return (

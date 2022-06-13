@@ -13,7 +13,7 @@ const VerticalInfos = ({ user }) => {
             />
           </div>
           <div className="calorieTitle">
-            {user && user.calorieCount}kCal{" "}
+            {user && user.keyData.calorieCount}kCal{" "}
             <div className="smallCalorieTitle"> Calories</div>
           </div>
         </h2>
@@ -27,7 +27,7 @@ const VerticalInfos = ({ user }) => {
             />
           </div>{" "}
           <div className="proteineTitle">
-            {user && user.proteinCount}g
+            {user && user.keyData.proteinCount}g
             <div className="smallProteineTitle">Proteines</div>{" "}
           </div>
         </h2>
@@ -38,7 +38,7 @@ const VerticalInfos = ({ user }) => {
             alt="glucides"
           />
           <div className="glucideTitle">
-            {user && user.carbohydrateCount}g{" "}
+            {user && user.keyData.carbohydrateCount}g{" "}
             <div className="smallGlucideTitle">Glucides</div>
           </div>
         </h2>
@@ -50,7 +50,7 @@ const VerticalInfos = ({ user }) => {
             alt="lipides"
           />{" "}
           <div className="lipideTitle">
-            {user && user.lipidCount}g
+            {user && user.keyData.lipidCount}g
             <div className="smallLipideTitle">Lipides</div>
           </div>
         </h2>

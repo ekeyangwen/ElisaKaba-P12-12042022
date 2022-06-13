@@ -1,24 +1,23 @@
 import React from "react";
-import { PieChart, Pie } from "recharts";
+import { PieChart, Pie, ResponsiveContainer } from "recharts";
 
-const GrafikPie = ({ data, score }) => {
+const GrafikPie = ({ score }) => {
   return (
-    <div className="pie">
-      <PieChart width={730} height={250}>
+    <ResponsiveContainer width="100%" height="100%">
+      <PieChart width={400} height={400}>
         <Pie
-          data={data}
-          dataKey={score}
-          nameKey="todayScore"
+          startAngle={180}
+          endAngle={0}
+          data={score}
           cx="50%"
           cy="50%"
-          innerRadius={60}
           outerRadius={80}
-          fill="blue"
+          fill="black"
           label
+          dataKey="todayScore"
         />
-        <Pie />
       </PieChart>
-    </div>
+    </ResponsiveContainer>
   );
 };
 

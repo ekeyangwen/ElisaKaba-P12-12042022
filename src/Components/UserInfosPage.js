@@ -8,7 +8,7 @@ const UserInfosPage = () => {
       {userList.map((user) => (
         <NavLink to={`user/${user.id}`} key={user.id} className="getUser">
           <button className="mock" key={user.id}>
-            user {user.id}
+            user {user.id} switch mode
           </button>
         </NavLink>
       ))}

@@ -1,1 +1,41 @@
+.otherGrafiks {
+  display: flex;
+  justify-content: space-between;
+  width: 835px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
 
+  .grafiks {
+    display: flex;
+    flex-direction: column;
+  }
+  .line,
+  .radar,
+  .pie {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+  }
+
+  .line {
+    background-color: #ff0000;
+  }
+
+  .radar {
+    background-color: #282d30;
+  }
+}
+.grafikBar {
+  height: 320px;
+  width: 835px;
+  border-radius: 5px;
+
+  .bar {
+    display: flex;
+    height: 320px;
+    width: 835px;
+    background: #fbfbfb;
+    border-radius: 5px;
+  }
+}

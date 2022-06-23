@@ -1,21 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useApi = (url) => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
 
-  const getData = () => {
+  useEffect(() => {
     fetch(url)
       .then(function (response) {
         return response.json();
       })
+
       .then(function (myJson) {
-        setData(myJson);
         console.log("JSON:", myJson);
-        console.log("JSON", data);
+        setData(myJson);
+        console.log(url);
       });
-  };
-  useEffect(() => {
-    getData();
   }, [url]);
 
   return data;

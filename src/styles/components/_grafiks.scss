@@ -37,5 +37,38 @@
     width: 835px;
     background: #fbfbfb;
     border-radius: 5px;
+    .legend {
+      display: flex;
+      position: absolute;
+      justify-content: space-between;
+      align-items: center;
+      width: 775px;
+    }
+    .dayActivity {
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-left: 30px;
+    }
+    .weightAndCalorie {
+      display: flex;
+      width: 290px;
+    }
+    .weight,
+    .calorie {
+      display: flex;
+      width: 150px;
+      color: #74798c;
+      font-family: "Roboto";
+      font-size: 14px;
+    }
+    .calorie {
+      width: 180px;
+    }
+    .blackOval,
+    .redOval {
+      margin-right: 5px;
+    }
   }
 }

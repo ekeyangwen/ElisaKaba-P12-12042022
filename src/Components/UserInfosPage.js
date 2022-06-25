@@ -6,16 +6,16 @@ import { useContext, useState } from "react";
 
 const UserInfosPage = () => {
   function SrcChoice() {
-    const { src, updateSrc } = useContext(SrcContext);
+    const { updateSrc, setUpdateSrc } = useContext(SrcContext);
 
     const handleChange = (event) => {
       const value = event.currentTarget.value;
-      updateSrc(value);
+      setUpdateSrc(value);
       console.log("Source Modifiée");
     };
 
     return (
-      <select name="src" defaultValue={src} onChange={handleChange}>
+      <select name="src" defaultValue={updateSrc} onChange={handleChange}>
         <option value="mock">mock</option>
         <option value="api">API</option>
       </select>
@@ -27,7 +27,7 @@ const UserInfosPage = () => {
       <div className="homeBtn">
         {userList.map((user) => (
           <NavLink to={`user/${user.id}`} key={user.id} className="getUser">
-            <button className="mock" key={user.id}>
+            <button className="dashboardBtn" key={user.id}>
               user {user.id} switch mode
             </button>
           </NavLink>
@@ -41,7 +41,7 @@ const UserInfosPage = () => {
 
   const contextValue = {
     src,
-    updateSrc: setSrc,
+    setUpdateSrc: setSrc,
   };
 
   return (

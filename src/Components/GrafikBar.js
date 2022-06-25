@@ -11,29 +11,58 @@ import {
 
 const GrafikBar = ({ activity }) => {
   const maDate = [
-    { date1: new Date("2020-07-01") },
-    { date2: new Date("2020-07-02") },
-    { date3: new Date("2020-07-03") },
-    { date4: new Date("2020-07-04") },
+    { id: 1, date: new Date("2020-07-01") },
+    { id: 2, date: new Date("2020-07-02") },
+    { id: 3, date: new Date("2020-07-03") },
+    { id: 4, date: new Date("2020-07-04") },
+    { id: 5, date: new Date("2020-07-05") },
+    { id: 6, date: new Date("2020-07-06") },
+    { id: 7, date: new Date("2020-07-07") },
   ];
-  console.log(maDate);
-  // console.log(activity.sessions.kilogram);
 
-  // const newDate = maDate.toLocaleDateString("fr");
-  // console.log(newDate);
+  // const dayNumber = Object.values(maDate).map((date) => {
+  //   console.log(date);
+  //   const number = date.id;
+  //   console.log(number);
+  //   return number;
+  // });
+
+  // const grafikNumber = Object.values(dayNumber);
+  // // const newDate = maDate.toLocaleDateString("fr");
+  // console.log(grafikNumber);
 
   return (
     <div className="bar">
+      <div className="legend">
+        <p className="dayActivity">Activité quotidienne</p>{" "}
+        <div className="weightAndCalorie">
+          <p className="weight">
+            <span className="weightPoint">
+              <img
+                className="blackOval"
+                src="../../../img/blackOval.png"
+                alt="Black Point"
+              ></img>
+            </span>
+            Poids (kg)
+          </p>
+          <p className="calorie">
+            {" "}
+            <span className="caloriePoint">
+              <img
+                className="redOval"
+                src="../../../img/redOval.png"
+                alt="Red Point"
+              ></img>
+            </span>
+            Calories brûlées (kCal)
+          </p>
+        </div>
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart width={500} height={300} data={activity.sessions}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="day"
-            tick={false}
-            stroke="#DEDEDE"
-
-            // tickFormatter={}
-          />
+          <XAxis data={maDate} dataKey="id" tick={false} stroke="#fffff" />
           <YAxis
             hide={false}
             orientation="right"

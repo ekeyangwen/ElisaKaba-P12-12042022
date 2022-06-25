@@ -76,7 +76,7 @@ const GrafikBar = ({ activity }) => {
               fill: "#C4C4C480",
             }}
             fill="#E60000"
-            // onMouseOver={{ fontFamily: "Roboto", fontSize: "7px" }}
+            // onMouseOver={{ fontFamily: "Roboto", fontSize: "7px", color:"red" }}
           />
         </BarChart>
       </ResponsiveContainer>

@@ -6,11 +6,7 @@
   top: 0px;
   border-radius: 5px;
 
-  .grafiks {
-    display: flex;
-    flex-direction: column;
-  }
-  .line,
+  .grafikLine,
   .radar,
   .pie {
     height: 263px;
@@ -18,8 +14,28 @@
     border-radius: 5px;
   }
 
-  .line {
-    background-color: #ff0000;
+  .grafikLine {
+    height: 268px;
+    width: 253px;
+    border-radius: 5px;
+    .line {
+      background-color: #ff0000;
+      height: 268px;
+      width: 253px;
+      border-radius: 5px;
+      .sessionLength {
+        position: absolute;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        margin-left: 15px;
+        width: 147px;
+        color: #fff;
+        opacity: 0.5;
+      }
+    }
   }
 
   .radar {
@@ -53,7 +69,7 @@
     }
     .weightAndCalorie {
       display: flex;
-      width: 290px;
+      width: 390px;
     }
     .weight,
     .calorie {

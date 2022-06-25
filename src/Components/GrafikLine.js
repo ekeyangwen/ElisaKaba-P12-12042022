@@ -11,20 +11,23 @@ import {
 
 const GrafikLine = ({ average }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={average.sessions}>
-        <CartesianGrid horizontal={false} vertical={false} />
-        <XAxis dataKey="day" axisLine={false} />
-        <YAxis dataKey="sessionLength" hide={true} />
-        <Tooltip />
-        <Line
-          type="monotone"
-          dataKey="sessionLength"
-          stroke="#FFF"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="line">
+      <p className="sessionLength">Durée moyenne des sessions</p>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={average.sessions}>
+          <CartesianGrid horizontal={false} vertical={false} />
+          <XAxis dataKey="day" axisLine={false} />
+          <YAxis dataKey="sessionLength" hide={true} />
+          <Tooltip />
+          <Line
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="#FFF"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

@@ -46,7 +46,7 @@ const DashboardInfos = () => {
               </div>
 
               <div className="otherGrafiks">
-                <div className="line">
+                <div className="grafikLine">
                   <GrafikLine average={dataAverage && dataAverage.data} />
                 </div>
                 <div className="radar">

@@ -7,8 +7,8 @@
   border-radius: 5px;
 
   .grafikLine,
-  .radar,
-  .pie {
+  .grafikRadar,
+  .grafikPie {
     height: 263px;
     width: 258px;
     border-radius: 5px;
@@ -37,9 +37,58 @@
       }
     }
   }
+  .grafikRadar {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+    .radar {
+      display: flex;
+      height: 263px;
+      width: 258px;
+      border-radius: 5px;
+      background-color: #282d30;
+    }
+  }
 
-  .radar {
-    background-color: #282d30;
+  .grafikPie {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+    .pie {
+      justify-content: center;
+      align-items: center;
+      background-color: #fbfbfb;
+    }
+    .pie,
+    .pieContainer {
+      display: flex;
+      height: 263px;
+      width: 258px;
+      border-radius: 5px;
+      .objectifScore {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        .scorePercent {
+          font-family: Roboto;
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 26px;
+          letter-spacing: 0px;
+          text-align: center;
+          color: #282d30;
+        }
+        .objectif {
+          font-family: Roboto;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 26px;
+          letter-spacing: 0px;
+          text-align: center;
+          color: #74798c;
+        }
+      }
+    }
   }
 }
 .grafikBar {
@@ -86,5 +135,13 @@
     .redOval {
       margin-right: 5px;
     }
+  }
+
+  .objectifScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95px;
+    height: 56px;
   }
 }

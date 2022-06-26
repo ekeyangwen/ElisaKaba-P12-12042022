@@ -49,12 +49,12 @@ const DashboardInfos = () => {
                 <div className="grafikLine">
                   <GrafikLine average={dataAverage && dataAverage.data} />
                 </div>
-                <div className="radar">
+                <div className="grafikRadar">
                   <GrafikRadar
                     performance={dataPerformance.data && dataPerformance.data}
                   />
                 </div>
-                <div className="pie">
+                <div className="grafikPie">
                   <GrafikPie score={dataMain && dataMain.data} />
                 </div>
               </div>

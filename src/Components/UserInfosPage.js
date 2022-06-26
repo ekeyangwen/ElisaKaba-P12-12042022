@@ -15,7 +15,7 @@ const UserInfosPage = () => {
     };
 
     return (
-      <select name="src" defaultValue={updateSrc} onChange={handleChange}>
+      <select name="src" defaultValue={{ updateSrc }} onChange={handleChange}>
         <option value="mock">mock</option>
         <option value="api">API</option>
       </select>
@@ -37,7 +37,7 @@ const UserInfosPage = () => {
     );
   }
 
-  const [src, setSrc] = useState("mock");
+  const [src, setSrc] = useState();
 
   const contextValue = {
     src,
@@ -48,7 +48,7 @@ const UserInfosPage = () => {
     <SrcContext.Provider value={contextValue}>
       <div className={src}>
         <ToolBar />
-        <p>Source utilisée : {src}</p>
+        <p className="srcUtil">Source utilisée : {src}</p>
       </div>
     </SrcContext.Provider>
   );

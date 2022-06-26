@@ -1,8 +1,12 @@
 .home {
   display: flex;
   height: 100vh;
+  a {
+    text-decoration: none;
+  }
 
-  .mock {
+  .dashboardBtn,
+  select {
     cursor: pointer;
     border: none;
     border-radius: 3px;
@@ -12,15 +16,22 @@
     padding: 20px;
     font-size: 24px;
     font-weight: 700;
+    margin: 20px;
   }
 
   .homeBtn {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    margin: 20px;
   }
 
   .getUser {
     display: flex;
     justify-content: center;
+  }
+  .srcUtil {
+    font-size: 24px;
+    font-weight: 700;
   }
 }

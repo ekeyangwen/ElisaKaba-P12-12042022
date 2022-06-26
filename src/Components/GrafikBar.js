@@ -10,7 +10,7 @@ import {
 } from "recharts";
 
 const GrafikBar = ({ activity }) => {
-  const maDate = [
+  const data = [
     { id: 1, date: new Date("2020-07-01") },
     { id: 2, date: new Date("2020-07-02") },
     { id: 3, date: new Date("2020-07-03") },
@@ -62,7 +62,7 @@ const GrafikBar = ({ activity }) => {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart width={500} height={300} data={activity.sessions}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis data={maDate} dataKey="id" tick={false} stroke="#fffff" />
+          <XAxis data={data} dataKey="id" tick={false} stroke="#fffff" />
           <YAxis
             hide={false}
             orientation="right"

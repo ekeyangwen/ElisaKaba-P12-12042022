@@ -9,6 +9,15 @@ import {
 } from "recharts";
 
 const GrafikRadar = ({ performance }) => {
+  const data = [
+    { id: 1, kind: "cardio" },
+    { id: 2, kind: "energy" },
+    { id: 3, kind: "endurance" },
+    { id: 4, kind: "strenght" },
+    { id: 5, kind: "speed" },
+    { id: 6, kind: "intensity" },
+  ];
+
   return (
     <div className="radar">
       <ResponsiveContainer width="100%" height="100%">
@@ -19,7 +28,7 @@ const GrafikRadar = ({ performance }) => {
           data={performance.data}
         >
           <PolarGrid radialLines={false} />
-          <PolarAngleAxis dataKey={performance.kind} />
+          <PolarAngleAxis data={data} dataKey={data.kind} />
           <Radar
             dataKey="value"
             stroke="#FF0101B2"

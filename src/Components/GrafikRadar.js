@@ -8,15 +8,21 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+const data = [
+  { kind: "cardio" },
+  { kind: "energy" },
+  { kind: "endurance" },
+  { kind: "strenght" },
+  { kind: "speed" },
+  { kind: "intensity" },
+];
+function customKindFormatter() {
+  for (let k = 0; k < data.length; k++) {
+    return data[k].kind;
+  }
+}
 const GrafikRadar = ({ performance }) => {
-  // const data = [
-  //   { id: 1, kind: "cardio" },
-  //   { id: 2, kind: "energy" },
-  //   { id: 3, kind: "endurance" },
-  //   { id: 4, kind: "strenght" },
-  //   { id: 5, kind: "speed" },
-  //   { id: 6, kind: "intensity" },
-  // ];
+  console.log(data.length);
 
   return (
     <div className="radar">
@@ -28,7 +34,12 @@ const GrafikRadar = ({ performance }) => {
           data={performance.data}
         >
           <PolarGrid radialLines={false} />
-          <PolarAngleAxis data={performance.data.kind} dataKey="kind" />
+          <PolarAngleAxis
+            data={performance.data.kind}
+            dataKey=""
+            tickFormatter={customKindFormatter}
+            stroke="#FFFF"
+          />
           <Radar
             dataKey="value"
             stroke="#FF0101B2"

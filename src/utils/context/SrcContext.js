@@ -1,23 +1,14 @@
-import React from "react";
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
-export default React.createContext({
-  src: "",
-  updateSrc: (name) => {},
-});
-
-//  const toggleSrc = () => {
-//     setSrcContext(srcContext === "mock" ? "API" : "mock");
-//   };
-// console.log(srcContext);
-// const [srcContext, setSrcContext] = useState("mock");
-
-// export function SrcContext({ children }) {
-//   return (
-//     <div>
-//       <SetSrcToggler.Provider value={{ etat: "mock" }}></SetSrcToggler.Provider>
-//     </div>
-//   );
-// }
-
-// export default SetSrcToggler;
+export const FetchContext = createContext();
+export const FetchProvider = ({ children }) => {
+  const [fetch, setFetch] = useState("API");
+  const toggleFetch = () => {
+    setFetch(fetch === "API" ? "MOCK" : "API");
+  };
+  return (
+    <FetchContext.Provider value={{ fetch, toggleFetch }}>
+      {children}
+    </FetchContext.Provider>
+  );
+};

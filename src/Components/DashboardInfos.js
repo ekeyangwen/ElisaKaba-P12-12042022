@@ -7,11 +7,12 @@ import GrafikRadar from "./GrafikRadar";
 import VerticalInfos from "./VerticalInfos";
 import useApi from "../utils/useApi";
 import VerticalNavbar from "./VerticalNavbar";
+import { urlMockData } from "../utils/const/urlMockData";
 
 const DashboardInfos = () => {
   const { id } = useParams();
-
-  const dataMain = useApi(`../data/dataInfoUser${id}.json`);
+  const url = urlMockData;
+  const dataMain = useApi(url.userMainData(id));
   const dataAverage = useApi(`../data/${id}/dataAverageSessionsUser.json`);
   const dataActivity = useApi(`../data/${id}/dataActivityUser.json`);
   const dataPerformance = useApi(`../data/${id}/dataPerformanceUser.json`);

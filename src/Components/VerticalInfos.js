@@ -1,6 +1,12 @@
 import React from "react";
 
 const VerticalInfos = ({ user }) => {
+  let number = user && user.keyData.calorieCount;
+
+  let numberComa = new Intl.NumberFormat("en-IN", {
+    maximumSignificantDigits: 3,
+  }).format(number);
+
   return (
     <div>
       <div className="infosCount">
@@ -13,7 +19,7 @@ const VerticalInfos = ({ user }) => {
             />
           </div>
           <div className="calorieTitle">
-            {user && user.keyData.calorieCount}kCal{" "}
+            {numberComa}kCal
             <div className="smallCalorieTitle"> Calories</div>
           </div>
         </h2>

@@ -16,10 +16,17 @@ const data = [
   { kind: "speed" },
   { kind: "intensity" },
 ];
-function customKindFormatter() {
-  for (let k = 0; k < data.length; k++) {
-    return data[k].kind;
+function customKindFormatter(tick) {
+  if (tick === 1) {
+    return "cardio";
   }
+  if (tick === 2) {
+    return "energy";
+  }
+
+  // for (let k = 0; k < data.length; k++) {
+  //   return data[k].kind;
+  // }
 }
 const GrafikRadar = ({ performance }) => {
   console.log(data.length);

@@ -5,22 +5,29 @@
   background: #020203;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 117px;
-}
-
-.verticalLogo {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: black;
-  width: 64px;
-
-  .logoVerticalNavbar {
+  height: 1024px;
+  .copyright {
+    color: #fff;
+    transform: rotate(270deg);
+    margin-top: 50px;
+    width: 190px;
+    font-family: "Roboto";
+  }
+  .verticalLogo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
     width: 64px;
-    height: 64px;
-    margin-top: 25px;
+
+    .logoVerticalNavbar {
+      width: 64px;
+      height: 64px;
+      margin-top: 25px;
+    }
   }
 }

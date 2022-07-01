@@ -25,6 +25,7 @@ const VerticalNavbar = () => {
           alt="logo training"
         ></img>
       </div>
+      <p className="copyright">Copyright, SportSee 2020</p>
     </section>
   );
 };

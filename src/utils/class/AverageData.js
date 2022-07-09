@@ -1,6 +1,6 @@
-export default class ActivityData {
+export default class AverageData {
   /**
-   * User Activity Data class
+   * User Average Data class
    *@param {number} userId
    *@param {array} sessions
    */

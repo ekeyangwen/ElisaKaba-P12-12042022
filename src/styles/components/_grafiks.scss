@@ -16,13 +16,13 @@
   }
 
   .grafikLine {
-    height: 268px;
-    width: 253px;
+    height: 263px;
+    width: 258px;
     border-radius: 5px;
     .line {
+      height: 263px;
+      width: 258px;
       background-color: #ff0000;
-      height: 268px;
-      width: 253px;
       border-radius: 5px;
       .sessionLength {
         position: absolute;
@@ -37,6 +37,20 @@
         opacity: 0.5;
         margin-top: 2px;
       }
+      .angleAxis {
+        display: none;
+      }
+
+      .payload {
+        width: 40px;
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+      }
     }
   }
   .grafikRadar {
@@ -44,11 +58,19 @@
     width: 258px;
     border-radius: 5px;
     .radar {
-      display: flex;
       height: 263px;
       width: 258px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: 5px;
       background-color: #282d30;
+    }
+    .angleAxis {
+      display: none;
+    }
+    text {
+      width: 41px;
     }
   }
 
@@ -94,49 +116,48 @@
   }
 }
 .grafikBar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  justify-content: space-between;
   height: 320px;
   width: 835px;
+  background: #fbfbfb;
   border-radius: 5px;
-
-  .bar {
+  .legend {
     display: flex;
-    height: 320px;
+    margin-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dayActivity {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .weightAndCalorie {
+    display: flex;
+    width: 390px;
+  }
+  .weight,
+  .calorie {
+    display: flex;
+    width: 150px;
+    color: #74798c;
+    font-family: "Roboto";
+    font-size: 14px;
+  }
+  .calorie {
+    width: 180px;
+  }
+  .blackOval,
+  .redOval {
+    margin-right: 5px;
+  }
+  .bar {
     width: 835px;
-    background: #fbfbfb;
-    border-radius: 5px;
-    .legend {
-      display: flex;
-      position: absolute;
-      justify-content: space-between;
-      align-items: center;
-      width: 775px;
-    }
-    .dayActivity {
-      font-family: Roboto;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 24px;
-      margin-left: 30px;
-    }
-    .weightAndCalorie {
-      display: flex;
-      width: 390px;
-    }
-    .weight,
-    .calorie {
-      display: flex;
-      width: 150px;
-      color: #74798c;
-      font-family: "Roboto";
-      font-size: 14px;
-    }
-    .calorie {
-      width: 180px;
-    }
-    .blackOval,
-    .redOval {
-      margin-right: 5px;
-    }
+    height: 320px;
   }
 
   .objectifScore {

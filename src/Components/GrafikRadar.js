@@ -8,51 +8,40 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { kind: "cardio" },
-  { kind: "energy" },
-  { kind: "endurance" },
-  { kind: "strenght" },
-  { kind: "speed" },
-  { kind: "intensity" },
-];
-function customKindFormatter(tick) {
+function customTickFormatter(tick) {
   if (tick === 1) {
-    return "cardio";
+    return "Intensité";
   }
   if (tick === 2) {
-    return "energy";
+    return "Vitesse";
   }
-
-  // for (let k = 0; k < data.length; k++) {
-  //   return data[k].kind;
-  // }
+  if (tick === 3) {
+    return "Force";
+  }
+  if (tick === 4) {
+    return "Endurance";
+  }
+  if (tick === 5) {
+    return "Energie";
+  }
+  if (tick === 6) {
+    return "Cardio";
+  }
 }
 const GrafikRadar = ({ performance }) => {
-  console.log(data.length);
-
   return (
     <div className="radar">
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart
-          outerRadius={90}
-          width={730}
-          height={250}
-          data={performance.data}
-        >
+      <ResponsiveContainer height="100%" width="100%">
+        <RadarChart data={performance.data} stroke="none">
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
-            data={performance.data.kind}
-            dataKey=""
-            tickFormatter={customKindFormatter}
-            stroke="#FFFF"
+            dataKey="kind"
+            tickFormatter={customTickFormatter}
+            stroke="#FFF"
+            fontFamily="Roboto"
+            fontSize={10}
           />
-          <Radar
-            dataKey="value"
-            stroke="#FF0101B2"
-            fill="#FF0101B2"
-            fillOpacity={0.6}
-          />
+          <Radar dataKey="value" fill="#FF0101B2" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>
     </div>

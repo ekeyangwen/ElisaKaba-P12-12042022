@@ -10,7 +10,6 @@ const GrafikPie = ({ score }) => {
       value: 1 - score.todayScore,
     },
   ];
-  console.log(score.todayScore * 100 + "%");
 
   return (
     <div className="pie">
@@ -35,7 +34,7 @@ const GrafikPie = ({ score }) => {
         </PieChart>
       </ResponsiveContainer>
       <div className="objectifScore">
-        <div className="scorePercent"> {score.todayScore * 100 + "%"}</div>
+        <div className="scorePercent"> {score.todayScore * 100} %</div>
 
         <span className="objectif">de votre objectif</span>
       </div>

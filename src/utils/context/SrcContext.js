@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const FetchContext = createContext();
 export const FetchProvider = ({ children }) => {
-  const [fetch, setFetch] = useState("API");
+  const [fetch, setFetch] = useState("MOCK");
   const toggleFetch = () => {
     setFetch(fetch === "API" ? "MOCK" : "API");
   };

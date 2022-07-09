@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import GrafikBar from "./GrafikBar";
 import GrafikLine from "./GrafikLine";
@@ -8,15 +8,18 @@ import VerticalInfos from "./VerticalInfos";
 import useApi from "../utils/useApi";
 import VerticalNavbar from "./VerticalNavbar";
 import { urlMockData } from "../utils/const/urlMockData";
+import { urlApi } from "../utils/const/urlApi";
+import { FetchContext } from "../utils/context/SrcContext";
 
 const DashboardInfos = () => {
   const { id } = useParams();
-  const url = urlMockData;
+  const { fetch } = useContext(FetchContext);
+  const url = fetch === "API" ? urlApi : urlMockData;
   const dataMain = useApi(url.userMainData(id));
-  const dataAverage = useApi(`../data/${id}/dataAverageSessionsUser.json`);
-  const dataActivity = useApi(`../data/${id}/dataActivityUser.json`);
-  const dataPerformance = useApi(`../data/${id}/dataPerformanceUser.json`);
-
+  const dataAverage = useApi(url.userAverageData(id));
+  const dataActivity = useApi(url.userActivityData(id));
+  const dataPerformance = useApi(url.userPerformanceData(id));
+  console.log(dataMain === null);
   if (
     dataMain === null ||
     dataAverage === null ||

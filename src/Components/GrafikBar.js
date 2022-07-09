@@ -10,31 +10,45 @@ import {
 } from "recharts";
 
 const GrafikBar = ({ activity }) => {
-  const data = [
-    { id: 1, date: new Date("2020-07-01") },
-    { id: 2, date: new Date("2020-07-02") },
-    { id: 3, date: new Date("2020-07-03") },
-    { id: 4, date: new Date("2020-07-04") },
-    { id: 5, date: new Date("2020-07-05") },
-    { id: 6, date: new Date("2020-07-06") },
-    { id: 7, date: new Date("2020-07-07") },
-  ];
+  function customDateFormatter(tick) {
+    if (tick === "2020-07-01") {
+      return "1";
+    }
+    if (tick === "2020-07-02") {
+      return "2";
+    }
+    if (tick === "2020-07-03") {
+      return "3";
+    }
+    if (tick === "2020-07-04") {
+      return "4";
+    }
+    if (tick === "2020-07-05") {
+      return "5";
+    }
+    if (tick === "2020-07-06") {
+      return "6";
+    }
+    if (tick === "2020-07-07") {
+      return "7";
+    }
+  }
 
-  // const dayNumber = Object.values(maDate).map((date) => {
-  //   console.log(date);
-  //   const number = date.id;
-  //   console.log(number);
-  //   return number;
-  // });
-
-  // const grafikNumber = Object.values(dayNumber);
-  // // const newDate = maDate.toLocaleDateString("fr");
-  // console.log(grafikNumber);
+  const CustomToolTip = ({ active, payload }) => {
+    if (active && payload) {
+      return (
+        <div className="toolTips">
+          <p className="payload">{`${payload[0].value} kg`}</p>
+          <p className="payload">{`${payload[1].value} Kcal`}</p>
+        </div>
+      );
+    }
+  };
 
   return (
-    <div className="bar">
+    <>
       <div className="legend">
-        <p className="dayActivity">Activité quotidienne</p>{" "}
+        <p className="dayActivity">Activité quotidienne</p>
         <div className="weightAndCalorie">
           <p className="weight">
             <span className="weightPoint">
@@ -59,28 +73,48 @@ const GrafikBar = ({ activity }) => {
           </p>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart width={500} height={300} data={activity.sessions}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis data={data} dataKey="id" tick={false} stroke="#fffff" />
-          <YAxis
-            hide={false}
-            orientation="right"
-            tick={{ fill: "#DEDEDE" }}
-            stroke="#DEDEDE"
-          />
-          <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={5} />
-          <Bar dataKey="calories" fill="#E60000" barSize={7} radius={5} />
-          <Tooltip
-            cursor={{
-              fill: "#C4C4C480",
-            }}
-            fill="#E60000"
-            // onMouseOver={{ fontFamily: "Roboto", fontSize: "7px", color:"red" }}
-          />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+      <div className="bar">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart width={50} height={300} data={activity.sessions}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis
+              tickFormatter={customDateFormatter}
+              dataKey="day"
+              tick={{ fill: "#9B9EAC" }}
+              fontFamily="Roboto"
+              stroke="border: 1px solid #DEDEDE"
+            />
+            <YAxis
+              dataKey="kilogram"
+              domain={["dataMin-7", "dataMax+3"]}
+              orientation="right"
+              tick={{ fill: "#9B9EAC" }}
+              stroke="#FBFBFB"
+              axisLine={false}
+              tickLine={false}
+              tickMargin={30}
+            />
+            <YAxis
+              dataKey="calories"
+              domain={[0, "dataMax+20"]}
+              hide={true}
+              orientation="left"
+              stroke="#FBFBFB"
+            />
+            <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={5} />
+            <Bar dataKey="calories" fill="#E60000" barSize={7} radius={5} />
+            <Tooltip
+              content={<CustomToolTip />}
+              cursor={{
+                fill: "#C4C4C480",
+              }}
+              fontFamily="Roboto"
+              backgroundColor="#e60000"
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </>
   );
 };
 

@@ -6,7 +6,6 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  CartesianGrid,
 } from "recharts";
 
 const GrafikLine = ({ average }) => {
@@ -14,13 +13,31 @@ const GrafikLine = ({ average }) => {
     if (tick === 1) {
       return "L";
     }
+    if (tick === 2) {
+      return "M";
+    }
+    if (tick === 3) {
+      return "M";
+    }
+    if (tick === 4) {
+      return "J";
+    }
+    if (tick === 5) {
+      return "V";
+    }
+    if (tick === 6) {
+      return "S";
+    }
+    if (tick === 7) {
+      return "D";
+    }
   }
 
-  const CustomTootlTip = ({ active, payload }) => {
+  const CustomToolTip = ({ active, payload }) => {
     if (active && payload) {
       return (
         <div className="toolTips">
-          <p>{`${payload[0].value}min`}</p>
+          <p className="payload">{`${payload[0].value} min`}</p>
         </div>
       );
     }
@@ -31,20 +48,24 @@ const GrafikLine = ({ average }) => {
       <p className="sessionLength">Durée moyenne des sessions</p>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={average.sessions}>
-          <CartesianGrid horizontal={false} vertical={false} />
           <XAxis
             dataKey="day"
             tickFormatter={customDayFormatter}
+            fontFamily="Roboto"
             axisLine={false}
+            stroke="white"
+            opacity={0.5}
+            fontSize={12}
           />
           <YAxis dataKey="sessionLength" hide={true} />
-          <Tooltip content={<CustomTootlTip />} />
+          <Tooltip content={<CustomToolTip />} />
           <Line
             type="monotone"
             dataKey="sessionLength"
-            stroke="#FFF"
+            stroke="white"
             activeDot={{ r: 8 }}
             dot={false}
+            // enableBackground={gradient({270deg}, #FFFFFF 1.19%, rgba(255, 255, 255, 0.403191) 81.27%)}
           />
         </LineChart>
       </ResponsiveContainer>

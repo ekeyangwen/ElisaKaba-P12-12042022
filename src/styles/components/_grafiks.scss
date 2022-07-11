@@ -160,6 +160,16 @@
     height: 320px;
   }
 
+  .toolTips {
+    width: 39px;
+    height: 63px;
+    padding: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 500;
+  }
   .objectifScore {
     display: flex;
     flex-direction: column;

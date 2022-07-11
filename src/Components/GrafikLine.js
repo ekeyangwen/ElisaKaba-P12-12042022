@@ -56,6 +56,7 @@ const GrafikLine = ({ average }) => {
             stroke="white"
             opacity={0.5}
             fontSize={12}
+            tickLine={false}
           />
           <YAxis dataKey="sessionLength" hide={true} />
           <Tooltip content={<CustomToolTip />} />
@@ -65,7 +66,6 @@ const GrafikLine = ({ average }) => {
             stroke="white"
             activeDot={{ r: 8 }}
             dot={false}
-            // enableBackground={gradient({270deg}, #FFFFFF 1.19%, rgba(255, 255, 255, 0.403191) 81.27%)}
           />
         </LineChart>
       </ResponsiveContainer>

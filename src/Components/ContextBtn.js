@@ -6,6 +6,7 @@ const ContextBtn = () => {
 
   return (
     <button
+      className="toggleBtn"
       onClick={() => {
         toggleFetch();
       }}

@@ -6,13 +6,15 @@ import ContextBtn from "./ContextBtn";
 const UserInfosPage = () => {
   return (
     <div className="homeBtn">
-      {userList.map((user) => (
-        <NavLink to={`user/${user.id}`} key={user.id} className="getUser">
-          <button className="dashboardBtn" key={user.id}>
-            user {user.id}
-          </button>
-        </NavLink>
-      ))}
+      <div className="usersBtn">
+        {userList.map((user) => (
+          <NavLink to={`user/${user.id}`} key={user.id} className="getUser">
+            <button className="dashboardBtn" key={user.id}>
+              user {user.id}
+            </button>
+          </NavLink>
+        ))}
+      </div>
       <ContextBtn />
     </div>
   );

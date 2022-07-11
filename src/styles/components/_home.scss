@@ -6,7 +6,7 @@
   }
 
   .dashboardBtn,
-  select {
+  .toggleBtn {
     cursor: pointer;
     border: none;
     border-radius: 3px;
@@ -18,20 +18,25 @@
     font-weight: 700;
     margin: 20px;
   }
-
+  .toggleBtn {
+    color: black;
+    background-color: #fbeaea;
+  }
   .homeBtn {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .usersBtn {
+    display: flex;
+    justify-content: center;
   }
 
   .getUser {
     display: flex;
     justify-content: center;
-  }
-  .srcUtil {
-    font-size: 24px;
-    font-weight: 700;
   }
 }

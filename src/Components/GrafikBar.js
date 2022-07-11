@@ -86,6 +86,7 @@ const GrafikBar = ({ activity }) => {
             />
             <YAxis
               dataKey="kilogram"
+              yAxisId="kilogram"
               domain={["dataMin-7", "dataMax+3"]}
               orientation="right"
               tick={{ fill: "#9B9EAC" }}
@@ -101,15 +102,25 @@ const GrafikBar = ({ activity }) => {
               orientation="left"
               stroke="#FBFBFB"
             />
-            <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={5} />
-            <Bar dataKey="calories" fill="#E60000" barSize={7} radius={5} />
+            <Bar
+              dataKey="kilogram"
+              fill="#282D30"
+              barSize={7}
+              radius={[5, 5, 0, 0]}
+            />
+            <Bar
+              dataKey="calories"
+              fill="#E60000"
+              barSize={7}
+              radius={[5, 5, 0, 0]}
+            />
             <Tooltip
               content={<CustomToolTip />}
               cursor={{
                 fill: "#C4C4C480",
               }}
               fontFamily="Roboto"
-              backgroundColor="#e60000"
+              fill="#ff0101"
             />
           </BarChart>
         </ResponsiveContainer>

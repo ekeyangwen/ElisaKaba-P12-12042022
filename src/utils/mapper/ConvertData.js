@@ -1,6 +1,6 @@
 import React from "react";
 
-const ConvertData = () => {
+const ConvertData = (result, url) => {
   return <div></div>;
 };
 

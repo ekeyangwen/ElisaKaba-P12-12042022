@@ -19,7 +19,7 @@ const DashboardInfos = () => {
   const dataAverage = useApi(url.userAverageData(id));
   const dataActivity = useApi(url.userActivityData(id));
   const dataPerformance = useApi(url.userPerformanceData(id));
-  console.log(dataMain === null);
+
   if (
     dataMain === null ||
     dataAverage === null ||

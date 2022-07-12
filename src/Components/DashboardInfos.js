@@ -13,13 +13,15 @@ import { FetchContext } from "../utils/context/SrcContext";
 
 const DashboardInfos = () => {
   const { id } = useParams();
+  // const [trueId, setTrueId] = useState(true);
+
   const { fetch } = useContext(FetchContext);
   const url = fetch === "API" ? urlApi : urlMockData;
   const dataMain = useApi(url.userMainData(id));
   const dataAverage = useApi(url.userAverageData(id));
   const dataActivity = useApi(url.userActivityData(id));
   const dataPerformance = useApi(url.userPerformanceData(id));
-
+  console.log("data score:", dataMain);
   if (
     dataMain === null ||
     dataAverage === null ||
@@ -28,6 +30,17 @@ const DashboardInfos = () => {
   ) {
     return <p>Chargement</p>;
   }
+
+  // let parsedId = parseInt(id);
+  // console.log(parsedId);
+  // console.log(trueId);
+  // console.log(dataMain.data.id);
+
+  // if (trueId === dataMain.data.id) {
+  //   console.log("Good id");
+  // } else {
+  //   console.log("Bad id");
+  // }
 
   return (
     <div>
@@ -58,8 +71,12 @@ const DashboardInfos = () => {
                     performance={dataPerformance.data && dataPerformance.data}
                   />
                 </div>
+
                 <div className="grafikPie">
-                  <GrafikPie score={dataMain && dataMain.data} />
+                  <GrafikPie
+                    score={dataMain && dataMain.data.score}
+                    todayScore={dataMain && dataMain.data.todayScore}
+                  />
                 </div>
               </div>
             </section>

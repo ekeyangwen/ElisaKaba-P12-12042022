@@ -1,7 +1,5 @@
 import React from "react";
 
-const ConvertData = (result, url) => {
-  return <div></div>;
-};
+const ConvertData = (result, url) => {};
 
 export default ConvertData;

@@ -1,13 +1,20 @@
 import React from "react";
 import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
 
-const GrafikPie = ({ score }) => {
-  let pieData = [
+const GrafikPie = ({ score, todayScore }) => {
+  console.log("todayScore:", todayScore);
+  console.log("score:", score);
+
+  let pieData = [];
+
+  let defineScore = score === undefined ? todayScore : score;
+
+  pieData = [
     {
-      value: score.todayScore,
+      value: defineScore,
     },
     {
-      value: 1 - score.todayScore,
+      value: 1 - defineScore,
     },
   ];
 
@@ -34,8 +41,7 @@ const GrafikPie = ({ score }) => {
         </PieChart>
       </ResponsiveContainer>
       <div className="objectifScore">
-        <div className="scorePercent"> {score.todayScore * 100} %</div>
-
+        <div className="scorePercent"> {defineScore * 100} %</div>
         <span className="objectif">de votre objectif</span>
       </div>
     </div>

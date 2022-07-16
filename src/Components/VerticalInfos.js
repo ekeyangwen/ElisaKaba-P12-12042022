@@ -1,7 +1,7 @@
 import React from "react";
 
-const VerticalInfos = ({ user }) => {
-  let number = user && user.keyData.calorieCount;
+const VerticalInfos = ({ keyData }) => {
+  let number = keyData.calorieCount;
 
   let numberComa = new Intl.NumberFormat("en-IN", {
     maximumSignificantDigits: 3,
@@ -33,7 +33,7 @@ const VerticalInfos = ({ user }) => {
             />
           </div>{" "}
           <div className="proteineTitle">
-            {user && user.keyData.proteinCount}g
+            {keyData.proteinCount}g
             <div className="smallProteineTitle">Proteines</div>{" "}
           </div>
         </h2>
@@ -44,7 +44,7 @@ const VerticalInfos = ({ user }) => {
             alt="glucides"
           />
           <div className="glucideTitle">
-            {user && user.keyData.carbohydrateCount}g{" "}
+            {keyData.carbohydrateCount}g{" "}
             <div className="smallGlucideTitle">Glucides</div>
           </div>
         </h2>
@@ -56,8 +56,7 @@ const VerticalInfos = ({ user }) => {
             alt="lipides"
           />{" "}
           <div className="lipideTitle">
-            {user && user.keyData.lipidCount}g
-            <div className="smallLipideTitle">Lipides</div>
+            {keyData.lipidCount}g<div className="smallLipideTitle">Lipides</div>
           </div>
         </h2>
       </div>

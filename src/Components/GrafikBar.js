@@ -8,8 +8,14 @@ import {
   Bar,
   Tooltip,
 } from "recharts";
-
+import PropTypes from "prop-types";
+/**
+ *
+ * @param {activity} props for the component
+ * @returns Barchart Grafik
+ */
 const GrafikBar = ({ activity }) => {
+  console.log(activity);
   function customDateFormatter(tick) {
     if (tick === "2020-07-01") {
       return "1";
@@ -127,6 +133,10 @@ const GrafikBar = ({ activity }) => {
       </div>
     </>
   );
+};
+
+GrafikBar.propTypes = {
+  tick: PropTypes.string,
 };
 
 export default GrafikBar;

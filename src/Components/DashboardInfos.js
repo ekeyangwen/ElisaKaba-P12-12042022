@@ -5,15 +5,23 @@ import GrafikLine from "./GrafikLine";
 import GrafikPie from "./GrafikPie";
 import GrafikRadar from "./GrafikRadar";
 import VerticalInfos from "./VerticalInfos";
-import useApi from "../utils/useApi";
+import { useApi } from "../utils/useApi";
 import VerticalNavbar from "./VerticalNavbar";
 import { urlMockData } from "../utils/const/urlMockData";
 import { urlApi } from "../utils/const/urlApi";
 import { FetchContext } from "../utils/context/SrcContext";
+import PropTypes from "prop-types";
 
-const DashboardInfos = () => {
+/**
+ *
+ * @param {object} userInfos
+ * @param {string} firstName
+ * @param {number} score
+ * @param {number} todayScore
+ * @returns Dashboard page
+ */
+const DashboardInfos = (result) => {
   const { id } = useParams();
-  // const [trueId, setTrueId] = useState(true);
 
   const { fetch } = useContext(FetchContext);
   const url = fetch === "API" ? urlApi : urlMockData;
@@ -21,7 +29,7 @@ const DashboardInfos = () => {
   const dataAverage = useApi(url.userAverageData(id));
   const dataActivity = useApi(url.userActivityData(id));
   const dataPerformance = useApi(url.userPerformanceData(id));
-  console.log("data score:", dataMain);
+
   if (
     dataMain === null ||
     dataAverage === null ||
@@ -31,17 +39,6 @@ const DashboardInfos = () => {
     return <p>Chargement</p>;
   }
 
-  // let parsedId = parseInt(id);
-  // console.log(parsedId);
-  // console.log(trueId);
-  // console.log(dataMain.data.id);
-
-  // if (trueId === dataMain.data.id) {
-  //   console.log("Good id");
-  // } else {
-  //   console.log("Bad id");
-  // }
-
   return (
     <div>
       <section className="dashboard">
@@ -49,9 +46,7 @@ const DashboardInfos = () => {
         <section className="nameAndGrafiks">
           <h1 className="bonjour">
             Bonjour {""}
-            <span className="name">
-              {dataMain.data && dataMain.data.userInfos.firstName}
-            </span>
+            <span className="name">{dataMain.userInfos.firstName}</span>
           </h1>
           <h2 className="felicitation">
             Félicitation ! Vous avez explosé vos objectifs hier 👏
@@ -59,30 +54,27 @@ const DashboardInfos = () => {
           <section className="grafiksAndInfos">
             <section className="grafiks">
               <div className="grafikBar">
-                <GrafikBar activity={dataActivity && dataActivity.data} />
+                <GrafikBar activity={dataActivity} />
               </div>
-
               <div className="otherGrafiks">
                 <div className="grafikLine">
-                  <GrafikLine average={dataAverage && dataAverage.data} />
+                  <GrafikLine average={dataAverage} />
                 </div>
                 <div className="grafikRadar">
-                  <GrafikRadar
-                    performance={dataPerformance.data && dataPerformance.data}
-                  />
+                  <GrafikRadar performance={dataPerformance} />
                 </div>
 
                 <div className="grafikPie">
                   <GrafikPie
-                    score={dataMain && dataMain.data.score}
-                    todayScore={dataMain && dataMain.data.todayScore}
+                    score={dataMain.score}
+                    todayScore={dataMain.todayScore}
                   />
                 </div>
               </div>
             </section>
             <section className="verticalbar">
               <div className="infos">
-                <VerticalInfos user={dataMain && dataMain.data} />
+                <VerticalInfos keyData={dataMain.keyData} />
               </div>
             </section>
           </section>
@@ -92,4 +84,10 @@ const DashboardInfos = () => {
   );
 };
 
+DashboardInfos.propTypes = {
+  firstName: PropTypes.string,
+  sessions: PropTypes.array,
+  kind: PropTypes.object,
+  data: PropTypes.array,
+};
 export default DashboardInfos;

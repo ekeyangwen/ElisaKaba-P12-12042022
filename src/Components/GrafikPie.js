@@ -2,12 +2,9 @@ import React from "react";
 import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
 
 const GrafikPie = ({ score, todayScore }) => {
-  console.log("todayScore:", todayScore);
-  console.log("score:", score);
-
   let pieData = [];
 
-  let defineScore = score === undefined ? todayScore : score;
+  let defineScore = score ? score : todayScore;
 
   pieData = [
     {

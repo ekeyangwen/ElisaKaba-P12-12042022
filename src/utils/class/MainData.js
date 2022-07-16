@@ -7,12 +7,12 @@ export default class MainData {
    *@param {string} userInfos.lastName
    *@param {string} userInfos.age
    *@param {number} todayScore
-   *@param {object} keyData
    */
-  constructor(id, userInfos, todayScore, keyData) {
+  constructor(id, userInfos, score, todayScore, keyData) {
     this.id = id;
     this.userInfos = userInfos;
     this.todayScore = todayScore;
+    this.score = score;
     this.keyData = keyData;
   }
 }

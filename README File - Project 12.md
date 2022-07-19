@@ -3,7 +3,7 @@
 2. [General Info](#general-info)
 3. [Technologies](#technologies)
 4. [Installation](#installation)
-5 . [Launch the project] (#launch)
+5. [Launch the project] (#launch)
 
 
 ### General information

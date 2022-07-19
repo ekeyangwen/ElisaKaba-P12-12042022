@@ -11,9 +11,10 @@ This readme file contains all the steps to launch the project.
 
 ### ScreenShots
 ***
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+
+![Home](https://user-images.githubusercontent.com/81231487/179772487-6009bcfe-8231-48d0-b9ce-feef034e4706.png)
+![Screeshot from the mocked data](https://user-images.githubusercontent.com/81231487/179772648-079b69c3-d4b8-4295-b14b-82d12b9eb1df.png)
+![Screshot from the API](https://user-images.githubusercontent.com/81231487/179772870-67fcea0d-f7b8-49f7-9748-b6a4675dfa97.png)
 
 ### Technologies
 ***
@@ -24,16 +25,19 @@ This readme file contains all the steps to launch the project.
   
 ### Installation (run the API)
 ***
- $ Fork this repository (https://github.com/ekeyangwen/repo_OC_P12.git)
+```
+ $ Fork this repository (https://github.com/ekeyangwen/repo_OC_P12.git).
  $ Clone it on your computer.
  $ The yarn command will allow you to install the dependencies.
- $ Go to your project directory with the cd command
+ $ Go to your project directory with the cd command.
  $ The yarn dev command will allow you to run the micro API.
-  
+```  
 ### Launch the project (launch the project)
 ***
- $ Fork this repository (https://github.com/ekeyangwen/ElisaKaba-P12-12042022.git)
+```
+ $ Fork this repository (https://github.com/ekeyangwen/ElisaKaba-P12-12042022.git).
  $ Clone it on your computer.
  $ The yarn command will allow you to install the dependencies.
- $ Go to your project directory with the cd command
+ $ Go to your project directory with the cd command.
  $ The yarn start command will allow you to launch the project.
+```

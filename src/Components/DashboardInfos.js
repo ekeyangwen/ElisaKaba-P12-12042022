@@ -14,15 +14,11 @@ import PropTypes from "prop-types";
 
 /**
  *
- * @param {object} userInfos
- * @param {string} firstName
- * @param {number} score
- * @param {number} todayScore
- * @returns Dashboard page
+ * @returns page charging or all the dasboard info
  */
-const DashboardInfos = (result) => {
-  const { id } = useParams();
 
+const DashboardInfos = () => {
+  const { id } = useParams();
   const { fetch } = useContext(FetchContext);
   const url = fetch === "API" ? urlApi : urlMockData;
   const dataMain = useApi(url.userMainData(id));

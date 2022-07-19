@@ -1,5 +1,12 @@
 import React from "react";
 import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ *
+ *
+ * @returns PieCharts Grafik
+ */
 
 const GrafikPie = ({ score, todayScore }) => {
   let pieData = [];
@@ -43,6 +50,11 @@ const GrafikPie = ({ score, todayScore }) => {
       </div>
     </div>
   );
+};
+
+GrafikPie.propTypes = {
+  score: PropTypes.number,
+  todayScore: PropTypes.number,
 };
 
 export default GrafikPie;

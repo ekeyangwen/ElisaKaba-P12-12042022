@@ -3,12 +3,12 @@ export const urlMockData = {
     return `../data/dataInfoUser${id}.json`;
   },
   userAverageData(id) {
-    return `../data/${id}/dataAverageUser.json`;
+    return `../data/${id}/average-sessions.json`;
   },
   userActivityData(id) {
-    return `../data/${id}/dataActivityUser.json`;
+    return `../data/${id}/activity.json`;
   },
   userPerformanceData(id) {
-    return `../data/${id}/dataPerformanceUser.json`;
+    return `../data/${id}/performance.json`;
   },
 };

@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ConvertData } from "./mapper/ConvertData";
+
+/**
+ *
+ * @param {string} url
+ * @returns the fetch of the data ad the potential error
+ */
 
 export const useApi = (url) => {
   const [data, setData] = useState(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetch(url)
       .then(function (response) {
@@ -12,16 +18,11 @@ export const useApi = (url) => {
       })
       .then((result) => {
         setData(ConvertData(url, result));
+      })
+      .catch((erreur) => {
+        navigate("*");
       });
-    // .then(function (myJson) {
-    //   setData(myJson);
-    // });
-  }, [url]);
+  }, [url, navigate]);
 
-  // if (data === null) {
-  //   console.log("UNDEFINED");
-  //   return <Navigate to="*" />;
-  // }
-  console.log(data);
   return data;
 };

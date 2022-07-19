@@ -7,8 +7,19 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+import PropTypes from "prop-types";
 
+/**
+ *
+ *
+ * @returns Linechart Grafik
+ */
 const GrafikLine = ({ average }) => {
+  /**
+   *
+   * @param {number} tick is the number of the dayweek
+   * @returns the first letter of the day
+   */
   function customDayFormatter(tick) {
     if (tick === 1) {
       return "L";
@@ -32,6 +43,13 @@ const GrafikLine = ({ average }) => {
       return "D";
     }
   }
+
+  /**
+   *
+   * @param {boolean} active
+   * @param {array} payload
+   * @returns a customTootltip wich return the number of minutes for sessions in the grafik
+   */
 
   const CustomToolTip = ({ active, payload }) => {
     if (active && payload) {
@@ -72,5 +90,7 @@ const GrafikLine = ({ average }) => {
     </div>
   );
 };
-
+GrafikLine.propTypes = {
+  average: PropTypes.object,
+};
 export default GrafikLine;

@@ -9,13 +9,13 @@ import {
   Tooltip,
 } from "recharts";
 import PropTypes from "prop-types";
+
 /**
  *
- * @param {activity} props for the component
  * @returns Barchart Grafik
  */
+
 const GrafikBar = ({ activity }) => {
-  console.log(activity);
   function customDateFormatter(tick) {
     if (tick === "2020-07-01") {
       return "1";
@@ -91,13 +91,12 @@ const GrafikBar = ({ activity }) => {
               stroke="border: 1px solid #DEDEDE"
             />
             <YAxis
-              dataKey="kilogram"
               yAxisId="kilogram"
+              dataKey="kilogram"
               domain={["dataMin-7", "dataMax+3"]}
               orientation="right"
               tick={{ fill: "#9B9EAC" }}
               stroke="#FBFBFB"
-              axisLine={false}
               tickLine={false}
               tickMargin={30}
             />
@@ -109,6 +108,7 @@ const GrafikBar = ({ activity }) => {
               stroke="#FBFBFB"
             />
             <Bar
+              yAxisId="kilogram"
               dataKey="kilogram"
               fill="#282D30"
               barSize={7}
@@ -134,9 +134,7 @@ const GrafikBar = ({ activity }) => {
     </>
   );
 };
-
 GrafikBar.propTypes = {
-  tick: PropTypes.string,
+  activity: PropTypes.object,
 };
-
 export default GrafikBar;

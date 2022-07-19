@@ -1,4 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+/**
+ *
+ *
+ * @returns the vertical infos for each user
+ */
 
 const VerticalInfos = ({ keyData }) => {
   let number = keyData.calorieCount;
@@ -64,4 +71,7 @@ const VerticalInfos = ({ keyData }) => {
   );
 };
 
+VerticalInfos.propTypes = {
+  keyData: PropTypes.object,
+};
 export default VerticalInfos;

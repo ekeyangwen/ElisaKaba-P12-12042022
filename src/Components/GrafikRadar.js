@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   RadarChart,
   Radar,
@@ -7,6 +6,13 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ *
+ * @param {number} tick is the number whitch returns a kind of performance
+ * @returns a customTick whitch is used in the render of the grafik
+ */
 
 function customTickFormatter(tick) {
   if (tick === 1) {
@@ -28,6 +34,12 @@ function customTickFormatter(tick) {
     return "Cardio";
   }
 }
+
+/**
+ *
+ *
+ * @returns Radarcharts Grafik
+ */
 const GrafikRadar = ({ performance }) => {
   return (
     <div className="radar">
@@ -48,4 +60,7 @@ const GrafikRadar = ({ performance }) => {
   );
 };
 
+GrafikRadar.propTypes = {
+  performance: PropTypes.object,
+};
 export default GrafikRadar;

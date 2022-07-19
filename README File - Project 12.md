@@ -11,9 +11,9 @@ This readme file contains all the steps to launch the project.
 
 ### ScreenShots
 ***
-(https://user-images.githubusercontent.com/81231487/179760419-e68fbf7c-f978-41d0-a51f-6a48559d71e7.png)
-(https://user-images.githubusercontent.com/81231487/179760713-4c5dd12a-546b-4ed8-be17-737873df1c28.png)
-(https://user-images.githubusercontent.com/81231487/179761169-5726df59-4941-49b4-97fa-c8411c54023a.png)  
+![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
 
 ### Technologies
 ***

@@ -3,7 +3,7 @@
 2. [General Info](#general-info)
 3. [Technologies](#technologies)
 4. [Installation](#installation)
-5. [Launch the project] (#launch)
+5. [Launch the project](#launch)
 ### General information
 ***
 This Sportsee project presents an analytic health tab for two users whith grafiks from Recharts. It's available from mocked data or API.
@@ -30,7 +30,7 @@ This readme file contains all the steps to launch the project.
  $ Go to your project directory with the cd command
  $ The yarn dev command will allow you to run the micro API.
   
-### Launch the Project (launch the project)
+### Launch the project (launch the project)
 ***
  $ Fork this repository (https://github.com/ekeyangwen/ElisaKaba-P12-12042022.git)
  $ Clone it on your computer.

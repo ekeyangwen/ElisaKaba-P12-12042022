@@ -1,0 +1,180 @@
+.otherGrafiks {
+  display: flex;
+  justify-content: space-between;
+  width: 835px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+  margin-top: 40px;
+
+  .grafikLine,
+  .grafikRadar,
+  .grafikPie {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+  }
+
+  .grafikLine {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+    .line {
+      height: 263px;
+      width: 258px;
+      background-color: #ff0000;
+      border-radius: 5px;
+      .sessionLength {
+        position: absolute;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        margin-left: 15px;
+        width: 147px;
+        color: #fff;
+        opacity: 0.5;
+        margin-top: 2px;
+      }
+      .angleAxis {
+        display: none;
+      }
+
+      .payload {
+        width: 40px;
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+      }
+    }
+  }
+  .grafikRadar {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+    .radar {
+      height: 263px;
+      width: 258px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background-color: #282d30;
+    }
+    .angleAxis {
+      display: none;
+    }
+    text {
+      width: 41px;
+    }
+  }
+
+  .grafikPie {
+    height: 263px;
+    width: 258px;
+    border-radius: 5px;
+    .pie {
+      justify-content: center;
+      align-items: center;
+      background-color: #fbfbfb;
+    }
+    .pie,
+    .pieContainer {
+      display: flex;
+      height: 263px;
+      width: 258px;
+      border-radius: 5px;
+      .objectifScore {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        .scorePercent {
+          font-family: Roboto;
+          font-size: 26px;
+          font-weight: 700;
+          line-height: 26px;
+          letter-spacing: 0px;
+          text-align: center;
+          color: #282d30;
+        }
+        .objectif {
+          font-family: Roboto;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 26px;
+          letter-spacing: 0px;
+          text-align: center;
+          color: #74798c;
+        }
+      }
+    }
+  }
+}
+.grafikBar {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  justify-content: space-between;
+  height: 320px;
+  width: 835px;
+  background: #fbfbfb;
+  border-radius: 5px;
+  .legend {
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dayActivity {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .weightAndCalorie {
+    display: flex;
+    width: 390px;
+  }
+  .weight,
+  .calorie {
+    display: flex;
+    width: 150px;
+    color: #74798c;
+    font-family: "Roboto";
+    font-size: 14px;
+  }
+  .calorie {
+    width: 180px;
+  }
+  .blackOval,
+  .redOval {
+    margin-right: 5px;
+  }
+  .bar {
+    width: 835px;
+    height: 320px;
+  }
+
+  .toolTips {
+    width: 39px;
+    height: 63px;
+    padding: 5px;
+    background-color: #e60000;
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .objectifScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95px;
+    height: 56px;
+  }
+}

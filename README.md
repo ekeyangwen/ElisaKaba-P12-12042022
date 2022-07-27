@@ -22,6 +22,7 @@ This readme file contains all the steps to launch the project.
  * [Yarn] (https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
   If you are working with several versions of NodeJS, we recommend you install nvm. This tool will allow you to easily manage your NodeJS versions.
  * [REACT]
+ * [Recharts]
   
 ### Installation (run the API)
 ***
